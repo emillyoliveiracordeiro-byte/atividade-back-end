@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        strong {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minha Biblioteca de Favoritos</h1>
+    <ul id="lista-livros"></ul>
+
+    <script>
+    // Array de elementos (Objetos do tipo Livro)
+        const livros = [
+            { titulo: "O Senhor dos Anéis", autor: "J.R.R. Tolkien", ano: 1954 },
+            { titulo: "1984", autor: "George Orwell", ano: 1949 },
+            { titulo: "O Hobbit", autor: "J.R.R. Tolkien", ano: 1937 },
+            { titulo: "Duna", autor: "Frank Herbert", ano: 1965 }
+        ];
+
+        // Função para renderizar os livros na tela
+        function exibirLivros() {
+            const ul = document.getElementById("lista-livros");
+            
+            livros.forEach(livro => {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${livro.titulo}</strong> - ${livro.autor} (${livro.ano})`;
+                ul.appendChild(li);
+            });
+        }
+// Executa a função quando a página carrega
+        window.onload = exibirLivros;
+    </script>
+
+</body>
+</html>
